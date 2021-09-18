@@ -1,0 +1,15 @@
+.box {
+    background-color: #fff;
+    padding: 15px
+}
+
+.result-list {
+    width: 100%;
+    height: 380px;
+    overflow-y: auto;
+}
+
+.result-list .table.table--custom {
+    border-collapse: separate;
+    border-spacing: 0;
+}

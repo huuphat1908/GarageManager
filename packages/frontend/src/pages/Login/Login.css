@@ -1,0 +1,17 @@
+.login__panel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(1, 1, 1, 0.3);
+    background-image: url('./background.gif');
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+  }
+  .login__box {
+    width: 33.3%;
+    background-color: #fff
+  }

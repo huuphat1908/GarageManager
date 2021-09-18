@@ -1,0 +1,29 @@
+POST http://localhost:8080/api/inventory-reports
+Content-Type: application/json
+
+{   
+    "month": 6,
+    "year": 2021
+}
+
+###
+POST http://localhost:8080/api/accounts/
+Content-Type: application/json
+
+{
+    "id": "huuphatarsenal2000",
+    "oldPassword": "arsenal2000",
+    "newPassword": "dsafsdaf"
+}
+
+###
+POST http://localhost:8080/api/accounts/login
+Content-Type: application/json
+
+{
+    "name": "admindoan",
+    "password": "adminthiduocvao"
+}
+
+###
+GET http://localhost:8080/api/cars

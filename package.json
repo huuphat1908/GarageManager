@@ -1,0 +1,22 @@
+{
+  "name": "04-quan-ly-garage",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd packages/frontend && npm start\" \"cd packages/backend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuanphuongtran14/GarageManager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuanphuongtran14/GarageManager/issues"
+  },
+  "homepage": "https://github.com/tuanphuongtran14/GarageManager#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}

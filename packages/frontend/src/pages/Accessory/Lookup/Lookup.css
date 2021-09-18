@@ -1,0 +1,12 @@
+.box {
+    background-color: #fff;
+    padding: 15px
+}
+.list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+.search-form {
+    max-width: 350px;
+    display: inline-block;
+}

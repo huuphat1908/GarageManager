@@ -1,0 +1,9 @@
+.navbar--custom {
+    height: 4rem;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .navbar--custom .nav--collapse .nav-link {
+    margin-right: .5rem;
+  }
