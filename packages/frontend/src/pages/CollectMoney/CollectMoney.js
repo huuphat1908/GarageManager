@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import print from 'print-js';
 import Select from 'react-select';
-import axios from 'axios';
+import axios from 'axios'
 
 export default function CollectMoney() {
     // Loading screen state
