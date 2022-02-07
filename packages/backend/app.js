@@ -3,12 +3,11 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const cors = require('cors');
+const logger = require('morgan');
 const db = require('./src/models');
-const origin = "http://localhost:3000"
 
-
+const origin = process.env.CLIENT_URL || 'http://localhost:3000';
 const router = require('./src/routes');
 const app = express();
 

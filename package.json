@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd packages/frontend && npm start\" \"cd packages/backend && npm start\""
+    "start": "concurrently \"cd packages/frontend && npm start\" \"cd packages/backend && npm run dev\""
   },
   "repository": {
     "type": "git",

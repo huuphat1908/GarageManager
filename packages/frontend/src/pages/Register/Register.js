@@ -14,19 +14,19 @@ function Register(props) {
     const passwordInput = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirmPassword");
 
-    if(passwordInput.value !== confirmPasswordInput.value) {
-        alert("Mật khẩu bạn nhập không khớp nhau!!!");
-        return;
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      alert("Mật khẩu bạn nhập không khớp nhau!!!");
+      return;
     }
 
-    if(nameInput.value.length < 7) {
-        alert("Tên tài khoản phải có ít nhất 7 kí tự");
-        return
+    if (nameInput.value.length < 7) {
+      alert("Tên tài khoản phải có ít nhất 7 kí tự");
+      return
     }
 
-    if(passwordInput.value.length < 7) {
-        alert("Mật khẩu phải có ít nhất 7 kí tự");
-        return
+    if (passwordInput.value.length < 7) {
+      alert("Mật khẩu phải có ít nhất 7 kí tự");
+      return
     }
 
     let user = {
@@ -37,15 +37,18 @@ function Register(props) {
     axios({
       method: 'POST',
       url: '/api/accounts',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'content-type': 'application/json'
+      },
       data: user,
-    //   headers: {"Access-Control-Allow-Origin": "*"}
     })
       .then(response => {
         alert("Đăng kí thành công!!! Bạn có thể đăng nhập ngay bây giờ bằng tài khoản này!!!");
         history.push('/');
       })
-      .catch( error => {
-        if(error.response && error.response.data) 
+      .catch(error => {
+        if (error.response && error.response.data)
           alert("Lỗi: " + error.response.data.message);
       })
   }
