@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
-import axios from 'axios';
+import axios from 'axios'
 
 export default function ImportAccessory() {
     // Loading screen state 
