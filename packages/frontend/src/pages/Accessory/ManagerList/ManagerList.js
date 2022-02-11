@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import './ManagerList.css';
 import axiosClient from '../../../config/axiosClient';
 
@@ -10,7 +9,6 @@ export default function ManagerList() {
     const [accessories, setAccessories] = useState([]);
     const [editedAccessoryId, setEditedAccessoryId] = useState(null);
     // Other variables
-    const history = useHistory();
 
     // Fetch data function
     const fetchData = name => {
@@ -265,12 +263,6 @@ export default function ManagerList() {
             )
         }
     }
-
-
-    // if(sessionStorage.getItem('role') !== 'Admin') {
-    //     alert("Bạn không có quyền truy cập đường dẫn này");
-    //     history.push('/');
-    // } 
 
     return (
         <>
