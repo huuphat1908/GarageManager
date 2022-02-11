@@ -1,2 +1,2 @@
 /* /index.html 200
-/api/* https://garage-manager-uit.herokuapp.com/:splat 200
+/api/* https://garage-manager-uit.herokuapp.com:8080/:splat 200
