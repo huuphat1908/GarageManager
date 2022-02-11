@@ -57,7 +57,7 @@ function ReceivingForm(props) {
         setMinReceivingDate(maxDate);
 
         document.getElementById('receivingDate').setAttribute('value', maxDate);
-    }, []);
+    })
 
     // hanle when receiving date on change
     const handleReceivingDateOnChange = (event) => {

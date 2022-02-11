@@ -106,7 +106,6 @@ const sendRole = async (req, res) => {
     // check if session in db
     try {
         let session = req.signedCookies.sessionId;
-        console.log(session);
         let sessionList = await SessionService.find();
         for (let i = 0; i < sessionList.length; i++) {
             if (session === sessionList[i].sessionId) {

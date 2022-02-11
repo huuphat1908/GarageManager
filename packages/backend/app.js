@@ -11,8 +11,6 @@ const origin = process.env.CLIENT_URL || 'http://localhost:3000';
 const router = require('./src/routes');
 const app = express();
 
-console.log(origin);
-
 app.use(
   cors({
     credentials: true,

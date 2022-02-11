@@ -9,7 +9,7 @@ function ReceivingList(props) {
 
     useEffect(() => {
         setReceivingForms(props.receivingList);
-    }, [props.receivingList]);
+    })
     
     
     // Fetch max number of received car in day
