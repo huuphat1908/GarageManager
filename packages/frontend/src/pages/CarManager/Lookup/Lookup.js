@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Lookup.css';
 import callAPI from '../../../utils/apiCaller';
-import axios from 'axios';
+import axiosClient from '../../../config/axiosClient';
 
 export default function Lookup() {
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ export default function Lookup() {
   const fetchCarsList = () => {
     // -- Turn on loading screen --
     setLoading(true);
-    axios({
+    axiosClient({
       method: 'GET',
       url: '/api/cars'
     })
@@ -118,7 +118,7 @@ export default function Lookup() {
     setLoading(true);
 
     // -- Give car back --
-    axios({
+    axiosClient({
       method: 'PUT',
       url: `/api/cars/${carId}`,
       data: {

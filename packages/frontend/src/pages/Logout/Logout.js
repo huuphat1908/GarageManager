@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import axiosClient from '../../config/axiosClient';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions/index'
 
 function Logout(props) {
     const history = useHistory();
-    axios({
+    axiosClient({
         method: 'GET',
         url: "/api/accounts/log-out",
     }).then(response => {

@@ -3,7 +3,7 @@ import Select from 'react-select';
 import callAPI from '../../../utils/apiCaller';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions/index';
-import axios from 'axios';
+import axiosClient from '../../../config/axiosClient';
 
 function ReceivingForm(props) {
     const [cars, setCars] = useState([]);
@@ -147,7 +147,7 @@ function ReceivingForm(props) {
 
 
         console.log(formData);
-        axios({
+        axiosClient({
             method: 'POST',
             url: '/api/receiving-forms',
             data: formData

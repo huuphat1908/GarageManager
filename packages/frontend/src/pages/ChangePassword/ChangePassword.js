@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import axiosClient from '../../config/axiosClient';
 
 export default function ChangePassword() {
     // Loading screen state 
@@ -43,7 +43,7 @@ export default function ChangePassword() {
         }
 
         // GET user id
-        axios({
+        axiosClient({
             method: "GET",
             url: `/api/accounts`
         })
@@ -51,7 +51,7 @@ export default function ChangePassword() {
                 const { userId } = response.data;
 
                 // Change password by calling API
-                axios({
+                axiosClient({
                     method: "PUT",
                     url: `/api/accounts/change-password`,
                     data: {

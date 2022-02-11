@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './CarBrandList.css';
-import axios from 'axios';
+import axiosClient from '.././../../config/axiosClient';
 
 export default function CarBrandList() {
     // Loading screen state 
@@ -21,7 +21,7 @@ export default function CarBrandList() {
         if (name)
             query += `name=${name}`;
 
-        axios({
+        axiosClient({
             method: "GET",
             url: `/api/car-brands/search${query}`
         })
@@ -105,7 +105,7 @@ export default function CarBrandList() {
             setLoading(true);
 
             // Create new car brand by calling api
-            axios({
+            axiosClient({
                 method: "POST",
                 url: "/api/car-brands",
                 data: newCarBrand
@@ -133,7 +133,7 @@ export default function CarBrandList() {
             setLoading(true);
 
             // Create new car brand by calling api
-            axios({
+            axiosClient({
                 method: "PUT",
                 url: `/api/car-brands/${editedCarBrandId}`,
                 data: updateContent
@@ -172,7 +172,7 @@ export default function CarBrandList() {
             setLoading(true);
 
             // Create new car brand by calling api
-            axios({
+            axiosClient({
                 method: "Delete",
                 url: `/api/car-brands/${carBrand._id}`
             })

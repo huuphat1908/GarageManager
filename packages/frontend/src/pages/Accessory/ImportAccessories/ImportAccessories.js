@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
-import axios from 'axios'
+import axiosClient from '../../../config/axiosClient'
 
 export default function ImportAccessory() {
     // Loading screen state 
@@ -17,7 +17,7 @@ export default function ImportAccessory() {
         // Turn on loading screen
         setLoading(true);
 
-        axios({
+        axiosClient({
             method: 'GET',
             url: '/api/accessories',
         })
@@ -64,7 +64,7 @@ export default function ImportAccessory() {
             amount: amountInput.value
         }
 
-        axios({
+        axiosClient({
             method: 'POST',
             url: '/api/accessory-import-forms',
             data

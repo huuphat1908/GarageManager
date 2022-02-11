@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Lookup.css';
-import axios from 'axios';
+import axiosClient from '../../../config/axiosClient';
 
 export default function Lookup() {
     // Loading screen state 
@@ -25,7 +25,7 @@ export default function Lookup() {
         // Turn on loading screen
         setLoading(true);
 
-        axios({
+        axiosClient({
             method: "GET",
             url: `/api/accessories/search${query}`
         })

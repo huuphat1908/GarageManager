@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import axiosClient from '../../config/axiosClient';
 import './Setting.css'
 
 export default function Setting() {
@@ -17,7 +17,7 @@ export default function Setting() {
         // Turn on loading screen
         setLoading(true);
 
-        axios({
+        axiosClient({
             method: 'GET',
             url: '/api/parameters'
         })
@@ -69,7 +69,7 @@ export default function Setting() {
             maxNumberOfReceivedCarInDay: document.getElementById("maxNumberOfReceivedCarInDay").value
         }
 
-        axios({
+        axiosClient({
             method: 'PUT',
             url: '/api/parameters',
             data

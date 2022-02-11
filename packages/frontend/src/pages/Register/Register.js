@@ -3,7 +3,7 @@ import './Register.css';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions/index'
 import { useHistory } from 'react-router-dom'
-import axios from 'axios';
+import axiosClient from '../../config/axiosClient';
 
 function Register(props) {
   let history = useHistory();
@@ -34,7 +34,7 @@ function Register(props) {
       password: passwordInput.value
     };
 
-    axios({
+    axiosClient({
       method: 'POST',
       url: '/api/accounts',
       headers: {

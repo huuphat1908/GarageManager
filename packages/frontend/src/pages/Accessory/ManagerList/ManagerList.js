@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ManagerList.css';
-import axios from 'axios';
+import axiosClient from '../../../config/axiosClient';
 
 export default function ManagerList() {
     // Loading screen state 
@@ -23,7 +23,7 @@ export default function ManagerList() {
 
         console.log(query)
 
-        axios({
+        axiosClient({
             method: "GET",
             url: `/api/accessories/search${query}`
         })
@@ -124,7 +124,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new accessory by calling api
-            axios({
+            axiosClient({
                 method: "POST",
                 url: "/api/accessories",
                 data: newAccessory
@@ -153,7 +153,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new accessory by calling api
-            axios({
+            axiosClient({
                 method: "PUT",
                 url: `/api/accessories/${editedAccessoryId}`,
                 data: updateContent
@@ -193,7 +193,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new accessory by calling api
-            axios({
+            axiosClient({
                 method: "Delete",
                 url: `/api/accessories/${accessory._id}`
             })

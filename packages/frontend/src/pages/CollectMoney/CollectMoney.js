@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import print from 'print-js';
 import Select from 'react-select';
-import axios from 'axios'
+import axiosClient from '../../config/axiosClient'
 
 export default function CollectMoney() {
     // Loading screen state
@@ -18,7 +18,7 @@ export default function CollectMoney() {
       // -- Turn on loading screen --
       setLoading(true);
   
-      // -- Fetch data by axios --
+      // -- Fetch data by axiosClient --
       fetchCarList();
     }, []);
 
@@ -42,7 +42,7 @@ export default function CollectMoney() {
 
     // Fetch cars list from API
     const fetchCarList = () => {
-      axios({
+      axiosClient({
         method: 'GET',
         url: '/api/cars'
       })
@@ -139,7 +139,7 @@ export default function CollectMoney() {
           email: document.getElementById('email').value,
           amount
         };
-        axios({
+        axiosClient({
           method: 'POST',
           url: '/api/bills',
           data: data

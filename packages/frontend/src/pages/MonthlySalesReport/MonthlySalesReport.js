@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import axiosClient from '../../config/axiosClient';
 import print from 'print-js';
 import './MonthlySalesReport.css';
 
@@ -49,7 +49,7 @@ export default function MonthlySalesReport() {
         }
 
         // -- Create report --
-        axios({
+        axiosClient({
             method: 'POST',
             url: '/api/sales',
             data: {

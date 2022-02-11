@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ManagerList.css';
-import axios from 'axios';
+import axiosClient from '../../../config/axiosClient';
 
 export default function ManagerList() {
     // Loading screen state 
@@ -21,7 +21,7 @@ export default function ManagerList() {
         if (name)
             query += `name=${name}`;
 
-        axios({
+        axiosClient({
             method: "GET",
             url: `/api/wages/search${query}`
         })
@@ -106,7 +106,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new wage by calling api
-            axios({
+            axiosClient({
                 method: "POST",
                 url: "/api/wages",
                 data: newWage
@@ -135,7 +135,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new wage by calling api
-            axios({
+            axiosClient({
                 method: "PUT",
                 url: `/api/wages/${editedWageId}`,
                 data: updateContent
@@ -175,7 +175,7 @@ export default function ManagerList() {
             setLoading(true);
 
             // Create new wage by calling api
-            axios({
+            axiosClient({
                 method: "Delete",
                 url: `/api/wages/${wage._id}`
             })
