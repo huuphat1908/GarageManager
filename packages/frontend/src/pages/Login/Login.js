@@ -6,7 +6,6 @@ import { useHistory, Link } from 'react-router-dom'
 import axiosClient from '../../config/axiosClient';
 
 function Login(props) {
-  console.log(process.env.API_URL);
   let history = useHistory();
 
   const login = (event) => {
