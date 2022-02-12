@@ -21,13 +21,15 @@ function Login(props) {
       method: 'POST',
       url: '/api/accounts/login',
       data: user,
-      headers: {"Access-Control-Allow-Origin": "*"}
+      headers: {"Access-Control-Allow-Origin": "*"},
+      withCredentials: true
     })
       .then(response => {
         axios({
           method: 'POST',
           url: '/api/accounts/role',
-          headers: {"Access-Control-Allow-Origin": "*"}
+          headers: {"Access-Control-Allow-Origin": "*"},
+          withCredentials: true
         })
           .then(res => {
             const role = res.data.role;
