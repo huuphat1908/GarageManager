@@ -6,12 +6,25 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const logger = require('morgan');
 const db = require('./src/models');
+const session = require('express-session')
 
 const origin = process.env.CLIENT_URL || 'http://localhost:3000';
 const router = require('./src/routes');
 const app = express();
 
 app.set('trust proxy', 1);
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'Super Secret (change it)',
+    resave: true,
+    saveUninitialized: false,
+    cookie: {
+      sameSite: 'none',
+      secure: true
+  }})
+);
+
 
 app.use(
   cors({
