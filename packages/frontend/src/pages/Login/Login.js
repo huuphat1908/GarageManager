@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../redux/actions/index'
 import { useHistory, Link } from 'react-router-dom'
 import axiosClient from '../../config/axiosClient';
+import axios from 'axios';
 
 function Login(props) {
   let history = useHistory();
@@ -16,14 +17,14 @@ function Login(props) {
       password: document.getElementById("password").value
     };
 
-    axiosClient({
+    axios({
       method: 'POST',
       url: '/api/accounts/login',
       data: user,
       headers: {"Access-Control-Allow-Origin": "*"}
     })
       .then(response => {
-        axiosClient({
+        axios({
           method: 'POST',
           url: '/api/accounts/role',
           headers: {"Access-Control-Allow-Origin": "*"}
