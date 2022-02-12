@@ -11,6 +11,8 @@ const origin = process.env.CLIENT_URL || 'http://localhost:3000';
 const router = require('./src/routes');
 const app = express();
 
+app.set('trust proxy', 1);
+
 app.use(
   cors({
     credentials: true,
