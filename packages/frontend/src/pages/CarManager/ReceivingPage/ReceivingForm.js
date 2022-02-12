@@ -145,8 +145,6 @@ function ReceivingForm(props) {
 
         props.setLoading(true);
 
-
-        console.log(formData);
         axiosClient({
             method: 'POST',
             url: '/api/receiving-forms',

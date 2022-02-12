@@ -18,5 +18,6 @@
   "homepage": "https://github.com/tuanphuongtran14/GarageManager#readme",
   "devDependencies": {
     "concurrently": "^6.2.0"
-  }
+  },
+  "dependencies": {}
 }
