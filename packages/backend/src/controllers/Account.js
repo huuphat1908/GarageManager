@@ -91,7 +91,10 @@ const login = async (req, res) => {
         });
         await newSession.save();
         res.cookie('sessionId', id, {
-            signed: true
+            signed: true,
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none'
         });
         return res.status(201).json('Login successfully');
     } catch (err) {
